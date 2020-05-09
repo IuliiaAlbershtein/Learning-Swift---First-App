@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var runButton: UIButton!
     
+    @IBOutlet weak var sumLabel: UILabel!
+    @IBOutlet weak var sumButton: UIButton!
+
+    
     
     @IBAction func runButtonClicked(_ sender: Any) {
         
@@ -30,11 +34,14 @@ class ViewController: UIViewController {
 
         
         //task1()
-        //task2()
         //task3()
-        //task4()
-        //task5()
-        task6()
+        task4()
+    }
+    @IBAction func sumButtonDoubleClicked(_ sender: Any) {
+
+        //task2()
+        task5()
+        //task6()
     }
     
 //    func test(int a, int b) {
@@ -56,7 +63,7 @@ class ViewController: UIViewController {
         let k = Int (textField2.text!)!
         let p = Int (textField3.text!)!
         let result = maxSum(m, k, p)
-        resultLabel.text = "maximum sum: \(result)"
+        sumLabel.text = "maximum sum: \(result)"
     }
     // Amount of positive numbers
     func task3(){
@@ -64,7 +71,7 @@ class ViewController: UIViewController {
         let k = Int (textField2.text!)!
         let p = Int (textField3.text!)!
         let result = positiveNumbers(m, k, p)
-        resultLabel.text = "Positive Numbers are: \(result)"
+        resultLabel.text = "Positive numbers are: \(result)"
     }
     // Same numbers
     func task4(){
@@ -75,7 +82,7 @@ class ViewController: UIViewController {
         if result == "YES"{
             resultLabel.text = "There are same numbers"
         } else {
-            resultLabel.text = "There are no positive numbers"
+            resultLabel.text = "There are no same numbers"
         }
     }
     // Sum of 2 numbers is equal to 3 number
@@ -85,9 +92,12 @@ class ViewController: UIViewController {
         let p = Int (textField3.text!)!
         let result = statementSum(m, k, p)
         if result == "YES"{
-            resultLabel.text = "Equal"
+            sumLabel.text = "Sum of 2 numers is equal to 3 number"
         } else {
-            resultLabel.text = "Not equal"
+            sumLabel.text = "Sum of 2 numers is not equal to 3 number"
+            //sumLabel.lineBreakMode = UILineBreakModeWordWrap
+            sumLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            sumLabel.numberOfLines = 2
         }
     }
     // Sum of all number inside the entered number: n=10, sum=55
@@ -100,7 +110,7 @@ class ViewController: UIViewController {
             k = k + p
         }
         let result = k
-        resultLabel.text = "Positive Numbers are: \(result)"
+        sumLabel.text = "Sum of numbers inside is: \(result)"
     }
     func statementSum(_ a: Int, _ b: Int, _ c: Int) -> String{
         var statement = "NO"
