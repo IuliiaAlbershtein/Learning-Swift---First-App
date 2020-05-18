@@ -93,6 +93,8 @@ class ViewController: UIViewController {
         let result = statementSum(m, k, p)
         if result == "YES"{
             sumLabel.text = "Sum of 2 numers is equal to 3 number"
+            sumLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            sumLabel.numberOfLines = 2
         } else {
             sumLabel.text = "Sum of 2 numers is not equal to 3 number"
             //sumLabel.lineBreakMode = UILineBreakModeWordWrap
@@ -189,3 +191,23 @@ class Dog {
     
     
 }
+
+class IntList {
+    private var array: [Int] = [5]
+    //var count can be set only in private scope (within class).
+    //outside of the class only getter is available in our case
+    //if setter is public, then can be put new value into count var outside the class
+    
+    public private(set) var count: Int = 0
+    //private var count: Int = 0
+    /*public class var count: Int {
+        get { return self.count }
+        set { self.count = newValue }
+    }
+    */
+    public func IntList() {
+        
+    }
+
+}
+
