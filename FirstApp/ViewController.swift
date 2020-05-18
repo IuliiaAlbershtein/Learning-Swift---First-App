@@ -205,9 +205,13 @@ class IntList {
         set { self.count = newValue }
     }
     */
+    public var capacity: Int {
+        get { return self.array.capacity }
+    }
     public func IntList() {
         
     }
+    
 
 }
 
