@@ -35,13 +35,17 @@ class ViewController: UIViewController {
         
         //task1()
         //task3()
-        task4()
+        //task4()
+        
+        
+        //print("hh")
     }
     @IBAction func sumButtonDoubleClicked(_ sender: Any) {
 
         //task2()
-        task5()
+        //task5()
         //task6()
+        task7()
     }
     
 //    func test(int a, int b) {
@@ -113,6 +117,26 @@ class ViewController: UIViewController {
         }
         let result = k
         sumLabel.text = "Sum of numbers inside is: \(result)"
+    }
+    func task7(){
+        
+        /*
+        var newArray = Array<Int>()
+        
+        newArray.append(200)
+        newArray.append(10)
+        print(newArray)*/
+        
+        let list = IntList()
+        list.AddLast(7)
+        list.AddLast(28)
+        list.AddLast(420)
+        list.AddLast(70)
+        list.AddLast(28)
+        list.AddLast(33)
+        list.Print()
+        print(list.count)
+        print(list.capacity)
     }
     func statementSum(_ a: Int, _ b: Int, _ c: Int) -> String{
         var statement = "NO"
@@ -193,7 +217,7 @@ class Dog {
 }
 
 class IntList {
-    private var array: [Int] = [5]
+    private var array: [Int] = Array<Int>()
     //var count can be set only in private scope (within class).
     //outside of the class only getter is available in our case
     //if setter is public, then can be put new value into count var outside the class
@@ -211,7 +235,24 @@ class IntList {
     public func IntList() {
         
     }
-    
+    //add at the end of array
+    func AddLast(_ value: Int){
+        array.append(value)
+        count += 1
+    }
+    func Insert(_ value: Int, _ index: Int){
+        
+    }
+    func GetValue(_ index: Int) -> Int {
+        return array[index]
+    }
+    func Print(){
+        print("[", terminator:" ")
+        for l in 0...count - 1 {
+            print(GetValue(l), terminator:", ")
+        }
+        print("]")
+    }
 
 }
 
